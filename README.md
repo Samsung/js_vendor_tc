@@ -23,3 +23,15 @@ path: js/src/test
 	Date:   Mon Jan 16 21:42:59 2017 -0800
 
 		Merge m-i to m-c, a=merge
+
+# V8
+Copied from V8 tag 5.7.477
+
+    commit 4b8a39354acd5949f3a389581fe6bda679a4e6d2
+    Author: v8-autoroll <v8-autoroll@chromium.org>
+    Date:   Mon Jan 16 21:25:22 2017 -0800
+
+        Version 5.7.477
+
+        Performance and stability improvements on all platforms.
+
