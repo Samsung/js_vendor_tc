@@ -38,3 +38,17 @@ Copied from V8 tag 5.7.477
 
         Performance and stability improvements on all platforms.
 
+# ChakraCore
+Copied from ChakraCore release/1.4
+- repo: https://github.com/Microsoft/ChakraCore.git
+- path: test
+
+    commit 77dd587a536da27c908811fded0adeac2770f1c3
+    Merge: 8b9ebcb 8d66b47
+    Author: Michael Holman <Michael.Holman@microsoft.com>
+    Date:   Tue Jan 17 17:47:15 2017 -0800
+
+        [MERGE #2357 @MikeHolman] add more CopyOnAccessNativeIntArray conversions
+
+            Merge pull request #2357 from MikeHolman:copyonaccess
+
