@@ -52,3 +52,12 @@ Copied from ChakraCore release/1.4
 
             Merge pull request #2357 from MikeHolman:copyonaccess
 
+# JetStream-1.1
+Created from Webkit r210797 (The same version as above JavaScriptCore)
+
+* JetStream-1.1 directory is created by executing ./create.rb in PerformanceTests/JetStream/
+
+- repo: https://github.com/WebKit/webkit.git
+- path: PerformanceTests/JetStream/JetStream-1.1/
+
+
