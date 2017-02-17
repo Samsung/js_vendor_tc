@@ -60,4 +60,10 @@ Created from Webkit r210797 (The same version as above JavaScriptCore)
 - repo: https://github.com/WebKit/webkit.git
 - path: PerformanceTests/JetStream/JetStream-1.1/
 
+# SunSpider
+Created from Webkit r210797 (The same version as above JavaScriptCore)
+
+- repo: https://github.com/WebKit/webkit.git
+- path: PerformanceTests/SunSpider/
+
 
