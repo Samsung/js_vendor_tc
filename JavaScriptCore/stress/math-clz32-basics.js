@@ -56,7 +56,7 @@ function verifyMathClz32OnIntegerWithOtherTypes()
 
     var clzMinusZero = mathClz32OnInteger(-0);
     if (clzMinusZero != 32)
-        throw "mathClz32OnInteger(-0) = " + clzMinusZero;
+        throw "mathClz32OnInteger(\"-0\") = " + clzMinusZero;
 }
 noInline(verifyMathClz32OnIntegerWithOtherTypes);
 
@@ -70,9 +70,9 @@ function mathClz32OnDouble(value)
 {
     return Math.clz32(value);
 }
-noInline(mathClz32OnDouble);
+noInline(mathClz32OnInteger);
 
-// Test simple cases on doubles.
+// Test simple cases on integers.
 function testMathClz32OnDoubles()
 {
     var value = mathClz32OnDouble(Math.PI);
@@ -89,19 +89,19 @@ function testMathClz32OnDoubles()
 
     var value = mathClz32OnDouble(-0);
     if (value != 32)
-        throw "mathClz32OnDouble(-0) = " + value;
+        throw "mathClz32OnDouble(0) = " + value;
 
     var value = mathClz32OnDouble(NaN);
     if (value != 32)
         throw "mathClz32OnDouble(NaN) = " + value;
 
-    var value = mathClz32OnDouble(Number.POSITIVE_INFINITY);
+    var value = mathClz32OnDouble(Number.POSITIVE_INFINITI);
     if (value != 32)
-        throw "mathClz32OnDouble(Number.POSITIVE_INFINITY) = " + value;
+        throw "mathClz32OnDouble(Number.POSITIVE_INFINITI) = " + value;
 
-    var value = mathClz32OnDouble(Number.NEGATIVE_INFINITY);
+    var value = mathClz32OnDouble(Number.NEGATIVE_INFINITI);
     if (value != 32)
-        throw "mathClz32OnDouble(Number.NEGATIVE_INFINITY) = " + value;
+        throw "mathClz32OnDouble(Number.NEGATIVE_INFINITI) = " + value;
 }
 noInline(testMathClz32OnDoubles);
 
@@ -185,12 +185,12 @@ function testMathClz32OnConstants()
     var value = Math.clz32(NaN);
     if (value !== 32)
         throw "Math.clz32(NaN) = " + value;
-    var value = Math.clz32(Number.POSITIVE_INFINITY);
+    var value = Math.clz32(Number.POSITIVE_INFINITI);
     if (value !== 32)
-        throw "Math.clz32(Number.POSITIVE_INFINITY) = " + value;
-    var value = Math.clz32(Number.NEGATIVE_INFINITY);
+        throw "Math.clz32(Number.POSITIVE_INFINITI) = " + value;
+    var value = Math.clz32(Number.NEGATIVE_INFINITI);
     if (value !== 32)
-        throw "Math.clz32(Number.NEGATIVE_INFINITY) = " + value;
+        throw "Math.clz32(Number.NEGATIVE_INFINITI) = " + value;
     var value = Math.clz32(Math.E);
     if (value !== 30)
         throw "Math.clz32(Math.E) = " + value;

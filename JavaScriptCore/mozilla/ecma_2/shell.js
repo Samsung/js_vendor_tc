@@ -42,23 +42,13 @@ var	GLOBAL = "[object global]";
 var PASSED = " PASSED!"
 var FAILED = " FAILED! expected: ";
 
-function stringify(x) {
-    let str;
-    try {
-        str = "" + x;
-    } catch (e) {
-        str = Object.prototype.toString.call(x);
-    }
-    return str;
-}
-
 function test() {
     for ( tc=0; tc < testcases.length; tc++ ) {
         testcases[tc].passed = writeTestCaseResult(
                             testcases[tc].expect,
                             testcases[tc].actual,
                             testcases[tc].description +" = "+
-                            stringify(testcases[tc].actual));
+                            testcases[tc].actual );
 
         testcases[tc].reason += ( testcases[tc].passed ) ? "" : "wrong value ";
     }
@@ -177,7 +167,7 @@ function stopTest() {
 function getFailedCases() {
   for ( var i = 0; i < testcases.length; i++ ) {
      if ( ! testcases[i].passed ) {
-        print( testcases[i].description +" = " +stringify(testcases[i].actual) +" expected: "+ stringify(testcases[i].expect));
+        print( testcases[i].description +" = " +testcases[i].actual +" expected: "+ testcases[i].expect );
      }
   }
 }
@@ -187,7 +177,7 @@ function err( msg, page, line ) {
     testcases[tc].reason = msg;
     writeTestCaseResult( testcases[tc].expect,
                          testcases[tc].actual,
-                         testcases[tc].description +" = "+ stringify(testcases[tc].actual) +
+                         testcases[tc].description +" = "+ testcases[tc].actual +
                          ": " + testcases[tc].reason );
     stopTest();
     return true;
@@ -204,8 +194,8 @@ function Enumerate ( o ) {
 function getFailedCases() {
   for (	var	i =	0; i < testcases.length; i++ ) {
 	 if	( !	testcases[i].passed	) {
-		writeLineToLog( testcases[i].description	+" = " + stringify(testcases[i].actual) +
-		    " expected: "+	stringify(testcases[i].expect));
+		writeLineToLog( testcases[i].description	+" = " +testcases[i].actual	+
+		    " expected: "+	testcases[i].expect	);
 	 }
   }
 }

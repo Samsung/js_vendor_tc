@@ -1,4 +1,4 @@
-//@ run("function-dot-arguments", "--useFunctionDotArguments=false")
+//@ run("function-dot-arguments", "--enableFunctionDotArguments=false")
 
 function foo() {
     var a = bar.arguments;

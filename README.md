@@ -2,17 +2,22 @@ Vendor Tests for Escargot
 =========================
 
 # JavaScriptCore
-Copied from Webkit r210797
+Copied from Webkit master 
 - repo: https://github.com/WebKit/webkit.git
-- path: JSTests
+- path: Source/JavaScriptCore/tests/
 
-	commit 65701cb8d8b7ec10c4546b41bc87c801827ee7e5
+	commit 766c99934048fd2b4b35790e2e619029564f6c45
 	Author: commit-queue@webkit.org <commit-queue@webkit.org@268f45cc-cd09-0410-ab3c-d52691b4dbfc>
-	Date:   Tue Jan 17 06:20:56 2017 +0000
+	Date:   Wed Jul 1 08:55:02 2015 +0000
 
-		Remove the REQUEST_ANIMATION_FRAME flag
-		https://bugs.webkit.org/show_bug.cgi?id=156980
-		<rdar://problem/25906849>
+	   	[Mac] Numerous CGColor leaks in swipe gestures
+	    https://bugs.webkit.org/show_bug.cgi?id=146501
+
+	    Patch by Joseph Pecoraro <pecoraro@apple.com> on 2015-07-01
+	    Reviewed by Tim Horton.
+
+	    * UIProcess/mac/ViewGestureControllerMac.mm:
+    	(WebKit::ViewGestureController::beginSwipeGesture):
 
 # SpiderMonkey
 - repo: https://github.com/mozilla/gecko-dev
@@ -53,7 +58,7 @@ Copied from ChakraCore release/1.4
             Merge pull request #2357 from MikeHolman:copyonaccess
 
 # JetStream-1.1
-Created from Webkit r210797 (The same version as above JavaScriptCore)
+Created from Webkit r210797
 
 * JetStream-1.1 directory is created by executing ./create.rb in PerformanceTests/JetStream/
 

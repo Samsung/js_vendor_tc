@@ -84,9 +84,7 @@ for (var primitive of primitives) {
     if (!didThrow)
         throw "Error: no error thrown";
     var expectedMessage = 'TypeError: %ArrayIteratorPrototype%.next requires that |this| be an Array Iterator instance';
-    if (primitive === null)
-        expectedMessage = 'TypeError: %ArrayIteratorPrototype%.next requires that |this| not be null or undefined';
-    if (primitive === undefined)
+    if (primitive == null)
         expectedMessage = 'TypeError: %ArrayIteratorPrototype%.next requires that |this| not be null or undefined';
     if (String(didThrow) !== expectedMessage)
         throw "Error: bad error thrown: " + didThrow;
