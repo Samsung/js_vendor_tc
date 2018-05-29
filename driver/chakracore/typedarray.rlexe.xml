@@ -127,6 +127,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>FIXME: negative index</escargot-skip>
       <files>negIndexes.js</files>
       <baseline>negIndexes.baseline</baseline>
       <tags>typedarray</tags>

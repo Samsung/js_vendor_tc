@@ -552,6 +552,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>FIXME: array.sort</escargot-skip>
       <files>nativeFloatArray_sort.js</files>
       <baseline>nativeFloatArray_sort.baseline</baseline>
     </default>

@@ -2,36 +2,42 @@
 <regress-exe>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>lambda1.js</files>
       <compile-flags>-off:deferparse -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>lambda1.js</files>
       <compile-flags>-force:deferparse -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>lambda-params-shadow.js</files>
       <compile-flags>-off:deferparse -es7asyncawait</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>lambda-params-shadow.js</files>
       <compile-flags>-force:deferparse -es7asyncawait</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>NumericLiteralTest.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>boundBug3837520.js</files>
       <compile-flags>-es6generators -es6classes -args summary -endargs</compile-flags>
       <tags>BugFix</tags>
@@ -46,18 +52,21 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>toPrimitiveCrossScriptTestCase.js</files>
       <compile-flags></compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>computedPropertyToString.js</files>
       <compile-flags>-ES6Classes -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>computedPropertySideEffect.js</files>
       <compile-flags>-force:deferparse</compile-flags>
       <tags>BugFix</tags>
@@ -65,12 +74,14 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>BugFix2214646.js</files>
       <tags>BugFix</tags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>toPrimitiveJitBug654983.js</files>
       <compile-flags>-trace:bailout</compile-flags>
       <!-- This test sometimes fails with bailout trace output.  Pending investigation in bug OS 5244610. -->
@@ -79,36 +90,42 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>es6IsConcatSpreadable.js</files>
       <compile-flags>-es6tolength -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>toPrimitive.js</files>
       <compile-flags>-es6regexsymbols -es6functionname -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>unscopablesWithScopeTest.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>function.name.js</files>
       <compile-flags>-ES6Generators -ES6Classes -es6functionnamefull -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>function.name.js</files>
       <compile-flags>-ES6Generators -ES6Classes -es6functionnamefull -force:deferparse -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>superDotOSBug3930962.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
       <tags>BugFix</tags>
@@ -116,6 +133,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>toStringTag.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
       <tags>exclude_dynapogo</tags>
@@ -153,66 +171,77 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>proto_addprop.js</files>
       <compile-flags>-maxinterpretcount:1 -off:simpleJit</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>proto_addprop.js</files>
       <compile-flags>-maxinterpretcount:2 -off:simpleJit</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>map_basic.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>map_functionality.js</files>
       <compile-flags>-ES6ObjectLiterals -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>set_basic.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>set_functionality.js</files>
       <compile-flags>-ES6ObjectLiterals -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>weakmap_basic.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>weakmap_functionality.js</files>
       <compile-flags>-ES6ObjectLiterals -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>weakset_basic.js</files>
       <compile-flags> -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>weakset_functionality.js</files>
       <compile-flags>-ES6ObjectLiterals -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>blockscope-activationobject.js</files>
     </default>
   </test>
@@ -327,18 +356,21 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>classes.js</files>
       <compile-flags>-Off:Deferparse -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>classes.js</files>
       <compile-flags>-Force:Deferparse -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>classes_bugfixes.js</files>
       <compile-flags>-Off:Deferparse -args summary -endargs</compile-flags>
       <tags>BugFix</tags>
@@ -346,6 +378,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>classes_bugfixes.js</files>
       <compile-flags>-Force:Deferparse -args summary -endargs</compile-flags>
       <tags>BugFix</tags>
@@ -353,24 +386,28 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6Super.js</files>
       <compile-flags>-nonative -off:dynamicprofile -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6Super.js</files>
       <compile-flags>-Off:Deferparse -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6Super.js</files>
       <compile-flags>-Force:Deferparse -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>classes_bug_OS_6471427.js</files>
       <compile-flags>-ForceSerialized</compile-flags>
       <tags>BugFix</tags>
@@ -378,6 +415,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>classes_bug_OS_6471427.js</files>
       <compile-flags></compile-flags>
       <tags>BugFix</tags>
@@ -385,6 +423,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>classes_bug_OS_7100885.js</files>
       <compile-flags>-maxsimplejitruncount:4 -maxinterpretcount:4</compile-flags>
       <tags>BugFix</tags>
@@ -392,12 +431,14 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6SubclassableBuiltins.js</files>
       <compile-flags>-ES6Classes -ES6Spread -ES6Generators -ESSharedArrayBuffer -Off:Deferparse -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6SubclassableBuiltins.js</files>
       <compile-flags>-ES6Classes -ES6Spread -ES6Generators -ESSharedArrayBuffer -Force:Deferparse -args summary -endargs</compile-flags>
     </default>
@@ -420,12 +461,14 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6MathAPIs.js</files>
       <compile-flags> -ES6Math -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6MathAPIs.js</files>
       <compile-flags> -ES6 -args summary -endargs</compile-flags>
     </default>
@@ -438,6 +481,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6StringAPIs.js</files>
       <compile-flags>-ES6String -ES6RegExSymbols -args summary -endargs</compile-flags>
     </default>
@@ -459,12 +503,14 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6StringTemplate.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6StringTemplateSlow.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
       <tags>Nightly</tags>
@@ -472,36 +518,42 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6TypedArrayExtensions.js</files>
       <compile-flags>-ES6ObjectLiterals -ES6Species -ESSharedArrayBuffer -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6ArrayAPI.js</files>
       <compile-flags>-ES6ObjectLiterals -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6ArrayUseConstructor.js</files>
       <compile-flags> -ES6Species -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6ArrayUseConstructor_v5.js</files>
       <compile-flags> -ES6Species- -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6Symbol.js</files>
       <compile-flags>-ES6ObjectLiterals -ES6Species -ES6RegExSymbols -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6Symbol_540238.js</files>
       <compile-flags>-RecyclerStress</compile-flags>
       <tags>exclude_fre</tags>
@@ -509,6 +561,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6Promise.js</files>
       <compile-flags> -ES6 -ES6Promise -ES6Species -args summary -endargs</compile-flags>
     </default>
@@ -595,41 +648,48 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>spreadIterator.js</files>
       <compile-flags>-ES6Classes -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>reflectConstructConsumeNewTarget.js</files>
       <compile-flags>-ES6Classes -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ReflectApiTests.js</files>
       <compile-flags>-ES6Classes -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>proxyTrapConsumeNewTarget.js</files>
       <compile-flags>-ES6Classes -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>CrossContextSpreadfunctionCall.js</files>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>spread.js</files>
       <compile-flags>-ES6Spread -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>unicode_convertUTF8.js</files>
       <compile-flags> -ES6Unicode</compile-flags>
       <tags>Slow</tags>
@@ -637,12 +697,14 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>Bug517864.js</files>
       <compile-flags>-force:deferparse -ES6Unicode</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>bug620694.js</files>
       <compile-flags>-es6all -recyclerstress</compile-flags>
       <tags>exclude_fre,Slow</tags>
@@ -659,6 +721,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>unicode_idDeferParseFunctions_utf8.js</files>
       <compile-flags>-ES6Unicode</compile-flags>
     </default>
@@ -700,6 +763,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>objlit.js</files>
       <compile-flags> -ES6 -ES6ObjectLiterals -ES6DefaultArgs -args summary -endargs</compile-flags>
     </default>
@@ -725,24 +789,28 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6Iterators-forof.js</files>
       <compile-flags>-ES6 -Intl- -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6Iterators-apis.js</files>
       <compile-flags>-ES6 -Intl- -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6Species-apis.js</files>
       <compile-flags>-ES6 -ES6Classes -ES6Species -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6Species-bugs.js</files>
       <compile-flags>-ES6 -ES6Species -args summary -endargs</compile-flags>
       <tags>BugFix</tags>
@@ -750,116 +818,136 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>blue595539.js</files>
       <compile-flags> -ES6Unicode</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>proxytest6.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>proxybugs.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>proxybug3.js</files>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>proxyprotobug.js</files>
       <baseline>proxyprotobug.baseline</baseline>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>proxy_cctx_bugs.js</files>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>proxyenumremoval.js</files>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>proxy-issue884.js</files>
       <baseline>proxy-issue884.baseline</baseline>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>nullPropertyDescriptor.js</files>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>object-is.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>object-assign.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>default.js</files>
       <compile-flags>-force:deferparse -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>default.js</files>
       <compile-flags>-off:deferparse -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>default.js</files>
       <compile-flags>-force:CachedScope -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>default-splitscope.js</files>
       <compile-flags>-off:deferparse -ES6DefaultArgsSplitScope -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>default-splitscope.js</files>
       <compile-flags>-force:deferparse -ES6DefaultArgsSplitScope -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>default-splitscope-undodeferparse.js</files>
       <compile-flags>-forceundodefer -ES6DefaultArgsSplitScope</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>rest.js</files>
       <compile-flags>-ES6Rest -ES6ObjectLiterals -ES6Spread -ES6DefaultArgs -ES6Classes -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>rest.js</files>
       <compile-flags>-ES6Rest -ES6ObjectLiterals -ES6Spread -ES6DefaultArgs -ES6Classes -force:deferparse -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>generators-syntax.js</files>
       <compile-flags>-ES6Generators -JitES6Generators -ES6Classes -ES6DefaultArgs -args summary -endargs</compile-flags>
       <tags>exclude_arm</tags>
@@ -867,6 +955,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>generators-deferparse.js</files>
       <compile-flags>-force:deferparse -ES6Generators -JitES6Generators -ES6Classes -ES6DefaultArgs</compile-flags>
       <tags>exclude_arm</tags>
@@ -874,6 +963,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>generators-apis.js</files>
       <compile-flags>-ES6Generators -JitES6Generators -args summary -endargs</compile-flags>
       <tags>exclude_arm</tags>
@@ -881,6 +971,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>generators-functionality.js</files>
       <!-- <compile-flags>-ES6Generators -JitES6Generators -ES6Classes -args summary -endargs</compile-flags> -->
       <compile-flags>-ES6Generators -ES6Classes -ES6DefaultArgs -args summary -endargs</compile-flags>
@@ -889,6 +980,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>generators-deferred.js</files>
       <compile-flags>-ES6Generators -JitES6Generators -ES6Classes -force:deferparse</compile-flags>
       <tags>exclude_arm</tags>
@@ -896,6 +988,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>generators-deferred.js</files>
       <compile-flags>-ES6Generators -JitES6Generators -ES6Classes -serialized</compile-flags>
       <tags>exclude_arm,exclude_forceserialized</tags>
@@ -903,6 +996,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>generators-undodefer.js</files>
       <compile-flags>-ES6Generators -force:deferparse -forceundodefer</compile-flags>
       <tags>exclude_dynapogo</tags>
@@ -910,6 +1004,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>generators-cachedscope.js</files>
       <compile-flags>-ES6Generators -JitES6Generators</compile-flags>
       <tags>exclude_arm</tags>
@@ -917,6 +1012,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>generators-applyargs.js</files>
       <!-- -off:inlineapply triggers the use of the ApplyArgs bytecode -->
       <compile-flags>-ES6Generators -JitES6Generators -off:inlineapply</compile-flags>
@@ -925,6 +1021,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>generators-applyargs.js</files>
       <compile-flags>-ES6Generators -JitES6Generators</compile-flags>
       <tags>exclude_arm</tags>
@@ -932,30 +1029,35 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>destructuring.js</files>
       <compile-flags>-ES6Rest -ES6Classes -ES6Destructuring -ES6DefaultArgs -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>destructuring_obj.js</files>
       <compile-flags>-ES6Rest -ES6Classes -ES6Destructuring -ES6DefaultArgs -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>destructuring_params.js</files>
       <compile-flags>-ES6Rest -ES6Classes -ES6Destructuring -ES6DefaultArgs -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>destructuring_catch.js</files>
       <compile-flags>-ES6Destructuring -ES6DefaultArgs -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>destructuring_bugs.js</files>
       <compile-flags>-ES6Destructuring -ForceDeferParse -args summary -endargs</compile-flags>
       <tags>BugFix</tags>
@@ -963,18 +1065,21 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>bug_279376.js</files>
       <compile-flags>-es6spread</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>OS_917200.js</files>
       <compile-flags>-ES6Destructuring-</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>blue_641922.js</files>
       <baseline>blue_641922.baseline</baseline>
       <compile-flags> -ES6Rest -RecyclerNoPageReuse -PageHeap:2</compile-flags>
@@ -983,18 +1088,21 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>bug_981217.js</files>
       <baseline>bug_981217.baseline</baseline>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>objlit-shorthand-error.js</files>
       <baseline>objlit-shorthand-error.baseline</baseline>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>generator-strict-error.js</files>
       <baseline>generator-strict-error.baseline</baseline>
       <compile-flags>-ES6Generators -force:deferparse</compile-flags>
@@ -1002,18 +1110,21 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>regex-annex-b.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>regex-case-folding.js</files>
       <compile-flags>-version:6 -ES6RegExSticky -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>regex-octoquad.js</files>
       <compile-flags>-RegexOptimize -args summary -endargs</compile-flags>
       <tags>exclude_fre</tags>
@@ -1021,80 +1132,94 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>regex-quantifiers.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>regex-code-point.js</files>
       <compile-flags>-ES6RegExSticky -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>regex-unicode.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>regex-unicode-CaseInsensitive.js</files>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>regex-unicode-CaseInsensitive-all-i.js</files>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>regex-unicode-CaseInsensitive-all-iu.js</files>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>regex-set.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>regex-prototype-properties.js</files>
       <compile-flags>-ES6RegExPrototypeProperties -ES6PrototypeChain -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>regex-symbols.js</files>
       <compile-flags>-ES6RegExSymbols -ES6RegExPrototypeProperties -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>regex-w-sharp-s-kelvin-sign.js</files>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>regexflags.js</files>
       <compile-flags>-version:6 -ES6RegExSticky -ES6Unicode -ES6RegExPrototypeProperties -ES6Destructuring -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>regexflags-disabled-features.js</files>
       <compile-flags>-ES6RegExSticky- -ES6Unicode- -ES6RegExPrototypeProperties -ES6Destructuring -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>RegExpApisTestWithStickyFlag.js</files>
       <compile-flags>-version:6 -ES6RegExSticky -args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>stickyflag.js</files>
       <baseline>stickyflag.baseline</baseline>
       <compile-flags>-version:6 -ES6RegExSticky -args summary -endargs</compile-flags>
@@ -1102,6 +1227,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>utfbug.js</files>
       <baseline />
       <compile-flags>-dump:bytecode</compile-flags>
@@ -1110,17 +1236,20 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>proxybugWithLdFld.js</files>
       <compile-flags>-maxsimplejitruncount:2 -maxinterpretcount:1 -forcejitloopbody -off:bailonnoprofile</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>proxybugWithproto.js</files>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ProxyInProxy.js</files>
       <baseline>ProxyInProxy.baseline</baseline>
       <compile-flags> -mic:1 -off:simpleJIT </compile-flags>
@@ -1129,24 +1258,28 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ProxySetPrototypeOf.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>arraywithproxy.js</files>
       <baseline>arraywithproxy.baseline</baseline>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>proxytest8.js</files>
       <baseline>proxytest8.baseline</baseline>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>proxytest9.js</files>
       <baseline>proxytest9.baseline</baseline>
       <tags>BugFix</tags>
@@ -1154,6 +1287,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6Function_bugs.js</files>
       <tags>BugFix,exclude_nonrazzle</tags>
       <compile-flags>-ES6 -args summary -endargs</compile-flags>
@@ -1161,6 +1295,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>OS_2700778.js</files>
       <compile-flags>-loopinterpretcount:1 -bgjit- -maxinterpretcount:3 -off:simplejit</compile-flags>
       <tags>BugFix</tags>
@@ -1168,12 +1303,14 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>bug_OS_2184795.js</files>
       <tags>BugFix</tags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>unicode_whitespace.js</files>
       <tags>BugFix</tags>
       <compile-flags>-ES6 -args summary -endargs</compile-flags>
@@ -1181,12 +1318,14 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>bug_OS_2553885.js</files>
       <tags>exclude_win7,BugFix,Intl</tags>
     </default>
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>bug_OS_2915477.js</files>
       <tags>BugFix</tags>
     </default>
@@ -1194,6 +1333,7 @@
 
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>bug_os3198161.js</files>
       <compile-flags>-es6all</compile-flags>
       <tags>BugFix</tags>
@@ -1201,6 +1341,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>bug_OS_4498031.js</files>
       <compile-flags>-MaxinterpretCount:1 -MaxSimpleJITRunCount:1 -args summary -endargs</compile-flags>
       <tags>BugFix</tags>
@@ -1209,6 +1350,7 @@
 
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>ES6NewTarget.js</files>
         <compile-flags>-es6classes -ES6Destructuring -args summary -endargs -es6generators</compile-flags>
     </default>
@@ -1216,6 +1358,7 @@
 
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6NewTarget_bugfixes.js</files>
       <compile-flags>-ES6Classes -Off:Deferparse -args summary -endargs</compile-flags>
       <tags>BugFix</tags>
@@ -1223,6 +1366,7 @@
 </test>
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6NewTarget_bugfixes.js</files>
       <compile-flags>-ES6Classes -Force:Deferparse -args summary -endargs</compile-flags>
       <tags>BugFix</tags>
@@ -1230,6 +1374,7 @@
 </test>
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>ES6NewTarget_bugfixes.js</files>
       <compile-flags>-ES6Classes -forceundodefer -args summary -endargs</compile-flags>
       <tags>BugFix</tags>
@@ -1238,12 +1383,14 @@
 
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>ES6Class_SuperChain.js</files>
         <compile-flags>-es6classes -args summary -endargs -es6generators</compile-flags>
     </default>
 </test>
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>globalLambdaNewTargetSyntaxError.js</files>
         <baseline>globalLambdaNewTargetSyntaxError.baseline</baseline>
         <tags>exclude_dynapogo</tags>
@@ -1251,6 +1398,7 @@
 </test>
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>globalNewTargetSyntaxError.js</files>
         <baseline>globalNewTargetSyntaxError.baseline</baseline>
         <tags>exclude_dynapogo</tags>
@@ -1258,6 +1406,7 @@
 </test>
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>globalCatchNewTargetSyntaxError.js</files>
         <baseline>globalCatchNewTargetSyntaxError.baseline</baseline>
         <tags>exclude_dynapogo</tags>
@@ -1265,6 +1414,7 @@
 </test>
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>globalParamCatchNewTargetSyntaxError.js</files>
         <baseline>globalParamCatchNewTargetSyntaxError.baseline</baseline>
         <tags>exclude_dynapogo</tags>
@@ -1273,42 +1423,49 @@
 </test>
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>ES6Class_BaseClassConstruction.js</files>
         <compile-flags>-es6classes -args summary -endargs -es6generators</compile-flags>
     </default>
 </test>
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>expo.js</files>
         <compile-flags>-args summary -endargs -es7exponentiationoperator</compile-flags>
     </default>
 </test>
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>trailingcomma.js</files>
         <compile-flags>-args summary -endargs</compile-flags>
     </default>
 </test>
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>es6HasInstance.js</files>
         <compile-flags>-args summary -endargs</compile-flags>
     </default>
 </test>
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>ES6RestrictedProperties.js</files>
         <compile-flags>-args summary -endargs</compile-flags>
     </default>
 </test>
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>ES6Proto.js</files>
         <compile-flags>-args summary -endargs</compile-flags>
     </default>
 </test>
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>object_literal_bug.js</files>
       <compile-flags>-ES6Destructuring -args summary -endargs</compile-flags>
       <tags>BugFix</tags>
@@ -1316,6 +1473,7 @@
 </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>OS_5403724.js</files>
       <tags>BugFix,exclude_</tags>
       <compile-flags>-maxinterpretcount:3 -off:simpleJit -ES6 -args summary -endargs</compile-flags>
@@ -1324,18 +1482,21 @@
   </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>forloops-per-iteration-bindings.js</files>
       <compile-flags>-args summary -endargs</compile-flags>
     </default>
   </test>
 <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>HTMLComments.js</files>
         <baseline>HTMLComments.baseline</baseline>
     </default>
 </test>
 <test>
   <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
     <files>await-futreserved-only-in-modules.js</files>
     <compile-flags>-ES6Module</compile-flags>
     <tags>exclude_dynapogo, exclude_xplat</tags>
@@ -1343,6 +1504,7 @@
 </test>
   <test>
     <default>
+      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>moduletest1.js</files>
       <compile-flags>-ES6Module</compile-flags>
       <tags>exclude_dynapogo, exclude_xplat</tags>
@@ -1350,6 +1512,7 @@
   </test>
 <test>
     <default>
+        <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>module-syntax.js</files>
         <compile-flags>-ES6Module -args summary -endargs</compile-flags>
         <tags>exclude_xplat</tags>
@@ -1357,6 +1520,7 @@
 </test>
 <test>
     <default>
+        <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>module-syntax1.js</files>
         <compile-flags>-ES6Module -args summary -endargs</compile-flags>
         <tags>exclude_xplat</tags>
@@ -1364,6 +1528,7 @@
 </test>
 <test>
     <default>
+        <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>module-functionality.js</files>
         <compile-flags>-ES6Module -args summary -endargs</compile-flags>
         <tags>exclude_xplat,exclude_dynapogo</tags>
@@ -1371,6 +1536,7 @@
 </test>
 <test>
     <default>
+        <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>module-syntax.js</files>
         <compile-flags>-ES6Module -force:deferparse -args summary -endargs</compile-flags>
         <tags>exclude_xplat</tags>
@@ -1378,6 +1544,7 @@
 </test>
 <test>
     <default>
+        <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>module-syntax1.js</files>
         <compile-flags>-ES6Module -force:deferparse -args summary -endargs</compile-flags>
         <tags>exclude_xplat</tags>
@@ -1385,6 +1552,7 @@
 </test>
 <test>
     <default>
+        <escargot-skip>ES6 unimplemented Spec</escargot-skip>
         <files>module-namespace.js</files>
         <compile-flags>-ES6Module -Es6ToStringTag</compile-flags>
         <baseline>module-namespace.baseline</baseline>
@@ -1393,6 +1561,7 @@
 </test>
 <test>
   <default>
+    <escargot-skip>ES6 unimplemented Spec</escargot-skip>
     <files>OS_5500719.js</files>
     <compile-flags>-forceserialized</compile-flags>
     <tags>exclude_dynapogo</tags>
@@ -1400,6 +1569,7 @@
 </test>
 <test>
   <default>
+    <escargot-skip>ES6 unimplemented Spec</escargot-skip>
     <files>OS_8600339.js</files>
     <compile-flags>-forceserialized</compile-flags>
     <tags>exclude_dynapogo</tags>
@@ -1407,18 +1577,21 @@
 </test>
 <test>
   <default>
+    <escargot-skip>ES6 unimplemented Spec</escargot-skip>
     <files>iteratorclose.js</files>
     <compile-flags>-off:deferparse -args summary -endargs</compile-flags>
   </default>
 </test>
 <test>
   <default>
+    <escargot-skip>ES6 unimplemented Spec</escargot-skip>
     <files>iteratorclose.js</files>
     <compile-flags>-force:deferparse -args summary -endargs</compile-flags>
   </default>
 </test>
 <test>
   <default>
+    <escargot-skip>ES6 unimplemented Spec</escargot-skip>
     <files>bug_issue_1496.js</files>
     <compile-flags>-mic:1 -maxsimplejitruncount:2</compile-flags>
     <baseline>bug_issue_1496.baseline</baseline>
@@ -1427,6 +1600,7 @@
 </test>
 <test>
   <default>
+    <escargot-skip>ES6 unimplemented Spec</escargot-skip>
     <files>typedarray_bugs.js</files>
     <compile-flags>-args summary -endargs</compile-flags>
     <tags>BugFix</tags>

@@ -109,6 +109,10 @@ ecma_5/Object/15.2.3.6-redefinition-3-of-4.js
 ecma_5/Object/15.2.3.6-redefinition-4-of-4.js
 ecma_5/Object/object-create-with-primitive-second-arg.js
 ecma_6/ArrayBuffer/constructorNotCallable.js
+ecma_6/Number/ToNumber.js
+ecma_6/Number/20.1.3.2-toPrecision.js
+ecma_6/Number/20.1.3.3-toFixed.js
+ecma_6/Number/20.1.3.2-toExponential.js
 ecma_6/Promise/dependent-promises.js
 ecma_6/TypedArray/constructor-non-detached.js
 ecma_6/TypedArray/constructor-not-callable.js

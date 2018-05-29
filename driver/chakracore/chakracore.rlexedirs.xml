@@ -231,7 +231,6 @@
 </dir>
 <dir>
   <default>
-    <escargot-skip>Not in scope</escargot-skip>
     <files>es6</files>
   </default>
 </dir>
