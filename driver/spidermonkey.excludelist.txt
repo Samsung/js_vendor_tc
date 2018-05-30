@@ -5,6 +5,7 @@ ecma_5/strict/11.1.5.js
 ecma_6/ArrayBuffer/getter-name.js
 ecma_6/Promise/promise-species.js
 ecma_6/TypedArray/subarray-species.js
+ecma_6/Math/fround.js
 js1_8_5/extensions/regress-650753.js
 js1_8_5/regress/regress-553778.js
 
@@ -14,6 +15,15 @@ ecma_5/extensions/extension-methods-reject-null-undefined-this.js
 ecma_5/strict/10.4.2.js
 ecma_5/strict/12.14.1.js
 ecma_5/strict/13.1.js
+ecma_6/Math/tanh-approx.js
+ecma_6/Math/expm1-approx.js
+ecma_6/Math/atanh-approx.js
+ecma_6/Math/cbrt-approx.js
+ecma_6/Math/sinh-approx.js
+ecma_6/Math/asinh-approx.js
+ecma_6/Math/log1p-approx.js
+ecma_6/Math/cosh-approx.js
+ecma_6/Math/acosh-approx.js
 js1_8_5/regress/regress-646820-1.js
 js1_8_5/regress/regress-646820-2.js
 js1_8_5/regress/regress-646820-3.js
