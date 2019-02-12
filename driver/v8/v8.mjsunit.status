@@ -1110,13 +1110,13 @@
 
   # etc
   'harmony/*': [SKIP],
-  'es6/proxies-*': [SKIP],
   'es7/*': [SKIP],
   'es8/*': [SKIP],
   'get-prototype-of': [SKIP],
   'global-properties': [SKIP],
   'regress/regress-4577': [SKIP],
   'regress/regress-4693': [SKIP],
+  'regress/regress-353551': [SKIP],
   'regress/regress-604044': [SKIP],
   'regress/regress-crbug-625590': [SKIP],
   'regress/regress-crbug-631917': [SKIP],
