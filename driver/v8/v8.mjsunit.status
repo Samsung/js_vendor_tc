@@ -979,7 +979,6 @@
   # builtins
   'html-string-funcs': [SKIP],
   'number-is': [SKIP],
-  'regexp-compile': [SKIP],
   'string-normalize': [SKIP],
   'asm/math-fround': [SKIP],
   'global-hash': [SKIP],
@@ -1140,7 +1139,7 @@
   # RegExp Issues
   'regexp-lastIndex': [SKIP],
   'string-slices-regexp': [SKIP],
-  'regress/regress-2058': [SKIP], 
+  'regress/regress-2058': [SKIP],
   'regress/regress-5566': [SKIP],
   'regress/regress-5836': [SKIP],
   'regress/regress-3229': [SKIP],
