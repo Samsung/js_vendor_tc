@@ -90,7 +90,6 @@
   </test>
   <test>
     <default>
-      <escargot-skip>ES6 unimplemented Spec</escargot-skip>
       <files>es6IsConcatSpreadable.js</files>
       <compile-flags>-es6tolength -args summary -endargs</compile-flags>
     </default>
