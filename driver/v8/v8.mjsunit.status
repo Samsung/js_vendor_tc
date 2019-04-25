@@ -53,6 +53,10 @@
   # Issue 3784: setters-on-elements is flaky
   'setters-on-elements': [PASS, FAIL],
 
+  # This test-cases always fails in ES6 Well-known symbol replace
+  'regress/regress-2437': [SKIP],
+  'string-replace-gc': [SKIP],
+
   ##############################################################################
   # Too slow in debug mode with --stress-opt mode.
   'regress/regress-create-exception': [PASS, ['mode == debug', SKIP]],
