@@ -838,9 +838,6 @@
   'es6/reflect-set-prototype-of' : [SKIP],
   'es6/regexp-constructor' : [SKIP],
   'es6/regexp-flags' : [SKIP],
-  'es6/regexp-match-lastindex' : [SKIP],
-  'es6/regexp-prototype' : [SKIP],
-  'es6/regexp-replace-lastindex' : [SKIP],
   'es6/regexp-sticky' : [SKIP],
   'es6/regexp-tolength' : [SKIP],
   'es6/regexp-tostring' : [SKIP],
@@ -915,7 +912,6 @@
   'es6/unicode-regexp-ignore-case-noi18n' : [SKIP],
   'es6/unicode-regexp-last-index' : [SKIP],
   'es6/unicode-regexp-restricted-syntax' : [SKIP],
-  'es6/unicode-regexp-unanchored-advance' : [SKIP],
   'es6/unicode-regexp-zero-length' : [SKIP],
   'es6/unscopables' : [SKIP],
 
@@ -1141,9 +1137,6 @@
   'regress/regress-596718': [SKIP],
 
   # RegExp Issues
-  'regexp-lastIndex': [SKIP],
-  'string-slices-regexp': [SKIP],
-  'regress/regress-2058': [SKIP],
   'regress/regress-5566': [SKIP],
   'regress/regress-5836': [SKIP],
   'regress/regress-3229': [SKIP],
