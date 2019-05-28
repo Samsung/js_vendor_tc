@@ -464,6 +464,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>Baseline not ES6 compatible</escargot-skip>
       <files>13.delete.js</files>
       <baseline>13.delete.baseline</baseline>
       <compile-flags>-ES6RegExPrototypeProperties-</compile-flags>
