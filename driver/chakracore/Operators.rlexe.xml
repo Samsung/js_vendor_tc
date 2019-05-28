@@ -204,6 +204,7 @@
   </test>
   <test>
     <default>
+      <escargot-skip>Baseline not ES6 compatible</escargot-skip>
       <files>prototypeInheritance2.js</files>
       <baseline>prototypeInheritance2.baseline</baseline>
       <compile-flags>-ES6RegExPrototypeProperties-</compile-flags>

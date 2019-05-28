@@ -1054,7 +1054,7 @@ Running all tests
 [Operators] newBuiltin.js .......... Skip (Error message differ)
 [Operators] newProto.js .......... Pass
 [Operators] prototypeInheritance.js .......... Pass
-[Operators] prototypeInheritance2.js .......... Pass
+[Operators] prototypeInheritance2.js .......... Skip (Baseline not ES6 compatible)
 [Operators] zero.js .......... Pass
 [Conversions] toint32.js .......... Pass
 [Conversions] toint32_2.js .......... Skip (Implementation-dependent case)
@@ -1213,7 +1213,7 @@ Running all tests
 [strict] 12.delete.js .......... Pass
 [strict] 12.delete.js .......... Skip (-ForceStrictMode)
 [strict] 12.delete_sm.js .......... Pass
-[strict] 13.delete.js .......... Pass
+[strict] 13.delete.js .......... Skip (Baseline not ES6 compatible)
 [strict] 14.var.js .......... Pass
 [strict] 14.var.js .......... Skip (-ForceStrictMode)
 [strict] 14.var_sm.js .......... Pass
@@ -2053,13 +2053,13 @@ TESTNAME					TOTAL	PASS	FAIL	SKIP	PASS_RATIO
                Regex		32		19		0		13		(59%)
           Prototypes		8		7		0		1		(87%)
      GlobalFunctions		13		9		0		4		(69%)
-           Operators		32		25		0		7		(78%)
+           Operators		32		24		0		8		(75%)
          Conversions		5		3		0		2		(60%)
                  RWC		1		1		0		0		(100%)
                  Lib		16		3		0		13		(18%)
                 JSON		14		9		0		5		(64%)
                 Bugs		57		27		0		30		(47%)
-              strict		105		44		0		61		(41%)
+              strict		105		43		0		62		(40%)
                 utf8		3		3		0		0		(100%)
         UnifiedRegex		27		8		0		19		(29%)
           typedarray		47		16		0		31		(34%)
@@ -2074,4 +2074,4 @@ TESTNAME					TOTAL	PASS	FAIL	SKIP	PASS_RATIO
      switchStatement		28		24		0		4		(85%)
       DebuggerCommon		205		68		0		137		(33%)
 ==========================================================
-               Total		1998		1159		0		839		(58%)
+               Total		1998		1157		0		841		(57%)
