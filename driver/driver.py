@@ -47,7 +47,11 @@ class CommandOptionValues(object):
             if not (a in SUPPORTED_ARCHS):
                 raise ValueError("Architecture should be between [" + ', '.join(SUPPORTED_ARCHS) +"] not " + a)
         for e in engine:
-            if not (e in ENGINES):
+            match_engine = False
+            for ee in ENGINES:
+                if ee in e:
+                    match_engine = True
+            if not match_engine:
                 raise ValueError("Engine should be between [" + ', '.join(ENGINES) +"] not " + e)
         for s in suite:
             if not (s in TEST_SUITES):
@@ -279,9 +283,12 @@ class Driver(object):
 
         for a_v_m_e in a_v_m_es:
             if "escargot" in a_v_m_e[3]:
-                shell = os.path.join(".", "escargot")
-                if not (os.path.isfile(shell)):
-                    shell = os.path.join("escargot", "escargot")
+                if a_v_m_e[3] is "escargot":
+                    shell = os.path.join(".", "escargot")
+                    if not (os.path.isfile(shell)):
+                        shell = os.path.join("escargot", "escargot")
+                else:
+                    shell = a_v_m_e[3]
                 #shell = os.path.join("out", "linux", a_v_m_e[0], a_v_m_e[1], a_v_m_e[2], "escargot")
                 #build_cmd = ['make', '.'.join([a_v_m_e[0], a_v_m_e[1], a_v_m_e[2]]), '-j']
                 #subprocess.check_call(build_cmd)
