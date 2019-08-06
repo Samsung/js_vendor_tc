@@ -256,6 +256,25 @@ class MozillaReader(TestReader):
                 return ["test/vendortest/SpiderMonkey/shell.js"]
         return self.mandatory_files[base_dir]
 
+from multiprocessing import Pool
+import multiprocessing
+
+def case_runner(data):
+    command = data["command"]
+    command_print = data["command_print"]
+    tc_ignore = data["tc_ignore"]
+    # 0 succ 1 fail 2 timeout 3 ignore
+    try:
+        if tc_ignore:
+            return 3
+        output = subprocess.check_output(command, timeout=data["tc_timeout"], env=data["tc_env"])
+        return 0
+    except subprocess.TimeoutExpired as e:
+        return 2
+    except subprocess.CalledProcessError as e:
+        return 1
+
+
 class Driver(object):
     def main(self):
         args = sys.argv[1:]
@@ -304,34 +323,56 @@ class Driver(object):
             timeout = 0
             for instance in instances:
                 with open(instance.output_file(a_v_m_e), 'w') as f:
+                    result_list = [] # 0 succ 1 fail 2 timeout 3 ignore
+                    case_data = []
+
                     for tc in instance.list_tests(options):
                         index += 1
-                        try:
-                            if options.subpath not in tc.path:
+
+                        if options.subpath not in tc.path:
                                 continue
-                            total += 1
+                        total += 1
 
-                            command = [shell]
-                            command = command + instance.mandatory_file(tc)
-                            command.append(tc.path)
+                        command = [shell]
+                        command = command + instance.mandatory_file(tc)
+                        command.append(tc.path)
 
-                            command_print = []
-                            command_print = command_print + instance.mandatory_file(tc)
-                            command_print.append(tc.path)
+                        command_print = []
+                        command_print = command_print + instance.mandatory_file(tc)
+                        command_print.append(tc.path)
 
-                            if tc.ignore:
-                                ignore += 1
-                                log(f, '[' + str(index) + '] ' + ' '.join(command_print) + " .... Excluded (" + tc.ignore_reason + ")")
-                                continue
-                            output = subprocess.check_output(command, timeout=tc.timeout, env=tc.env)
+                        data = {}
+                        data["command"] = command
+                        data["command_print"] = command_print
+
+                        data["tc_timeout"] = tc.timeout * multiprocessing.cpu_count()
+                        data["tc_env"] = tc.env
+                        data["tc_ignore"] = tc.ignore
+                        if tc.ignore:
+                            data["tc_ignore_reason"] = tc.ignore_reason
+
+                        case_data.append(data)
+
+                    test_pool = Pool(processes=multiprocessing.cpu_count())
+                    case_result = test_pool.imap(case_runner, case_data)
+
+                    i = 0
+                    # 0 succ 1 fail 2 timeout 3 ignore
+                    for cr in case_result:
+                        if cr == 0:
+                            log(f, '[' + str(i + 1) + '] ' + ' '.join(case_data[i]["command_print"]) + " .... Success")
                             succ += 1
-                            log(f, '[' + str(index) + '] ' + ' '.join(command_print) + " .... Success")
-                        except subprocess.TimeoutExpired as e:
-                            timeout += 1
-                            log(f, '[' + str(index) + '] ' + ' '.join(command_print) + " .... Timeout")
-                        except subprocess.CalledProcessError as e:
+                        elif cr == 1:
+                            log(f, '[' + str(i + 1) + '] ' + ' '.join(case_data[i]["command_print"]) + " .... Fail")
                             fail += 1
-                            log(f, '[' + str(index) + '] ' + ' '.join(command_print) + " .... Fail (" + e.output.decode('cp1252')[:-1] + ")")
+                        elif cr == 2:
+                            log(f, '[' + str(i + 1) + '] ' + ' '.join(case_data[i]["command_print"]) + " .... Timeout")
+                            timeout += 1
+                        elif cr == 3:
+                            ignore += 1
+                            log(f, '[' + str(i + 1) + '] ' + ' '.join(case_data[i]["command_print"]) + " .... Excluded (" + case_data[i]["tc_ignore_reason"] + ")")
+                        i += 1
+
                     log(f, 'total : ' + str(total))
                     log(f, 'succ : ' + str(succ))
                     log(f, 'fail : ' + str(fail))
