@@ -13,15 +13,6 @@
  * limitations under the License.
  */
 
-function isSyntaxError(str) {
-  try {
-    eval(str);
-    assert(false);
-  } catch (e) {
-    assert(e instanceof SyntaxError);
-  }
-}
-
 // Array destructuring
 
 // Nested array destructuring
@@ -76,10 +67,10 @@ assert(defaultArrayArgument() === 6);
 assert(defaultArrayArgument([4, 5, 6]) === 15);
 
 // Array destructuring syntax check
-isSyntaxError("var [x, ...y , x]");
-isSyntaxError("var [x, x]");
-isSyntaxError("(function ([x, x]) {})");
-isSyntaxError("(function ([x, y], x) {})");
+assertThrows("var [x, ...y , x]", SyntaxError);
+assertThrows("var [x, x]", SyntaxError);
+assertThrows("(function ([x, x]) {})", SyntaxError);
+assertThrows("(function ([x, y], x) {})", SyntaxError);
 
 // Object destructuring
 
@@ -246,6 +237,14 @@ var [,, { name }] = props;
 assert(name === 'FizzBuzz');
 
 // Object destructuring syntax check
-isSyntaxError("(function ({x, x}) {})");
-isSyntaxError("(function ({x, y}, x) {})");
-isSyntaxError("(function ({x : a, y : a}, b) {})");
+assertThrows("(function ({x, x}) {})", SyntaxError);
+assertThrows("(function ({x, y}, x) {})", SyntaxError);
+assertThrows("(function ({x : a, y : a}, b) {})", SyntaxError);
+
+var binding = { compare: 1, compareOffset: "a" };
+const { compare: compare_, compareOffset } = binding;
+
+assert(compare_ === 1);
+assert(compareOffset === "a");
+assertThrows("compare_ = 1", TypeError);
+assertThrows("compareOffset = 1", TypeError);
