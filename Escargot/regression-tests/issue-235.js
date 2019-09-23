@@ -21,4 +21,4 @@ a.constructor = {
   }
 }
 
-assert(JSON.stringify(a.concat()) == "{}")
+assert(JSON.stringify(a.concat()) == "[]")
