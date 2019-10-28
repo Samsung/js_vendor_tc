@@ -67,6 +67,12 @@ var fives = [];
 assert(fives[0] === 5);
 assert(fives[1] === 10);
 
+// Arrow function call within eval
+eval(() => {});
+assert(eval((() => 1)()) === 1);
+assert(eval((a => 2)()) === 2);
+assert(eval((() => { return 3;})()) === 3);
+
 // v8:4474
 (function testConciseBodyReturnsRegexp() {
   var arrow1 = () => /foo/
