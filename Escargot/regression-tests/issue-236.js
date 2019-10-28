@@ -42,3 +42,13 @@ var test5 = () => {
     return (function ($ = ($$ = function() { return 5; }) => { return $$(); }) { return $(); })();
 }
 assert(test5() == 5);
+
+var test6 = function () {
+        return (function ($ = ($$ = function() { return 5; }) => { return $$(); }) { var $$$ = () => 1; return $() + $$$(); })();
+}
+assert(test6() === 6);
+
+var test7 = function () {
+        return (function ($ = ($$ = function() { return 6; }) => { return $$(); }) { var $$$ = function() { return 1;}; return $() + $$$(); })();
+}
+assert(test7() === 7);
