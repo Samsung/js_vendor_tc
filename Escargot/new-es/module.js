@@ -13,4 +13,4 @@
  * limitations under the License.
  */
 
-load("test/vendortest/Escargot/es2015/test-module.mjs")
+load("test/vendortest/Escargot/new-es/test-module.mjs")
