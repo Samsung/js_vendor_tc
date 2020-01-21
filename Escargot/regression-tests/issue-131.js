@@ -14,4 +14,4 @@
  */
 
 f = Function("func`foo`");
-assert (f.toString().localeCompare("function anonymous() {\nfunc`foo`\n}") == 0);
+assert (f.toString().localeCompare("function anonymous(\n) {\nfunc`foo`\n}") == 0);

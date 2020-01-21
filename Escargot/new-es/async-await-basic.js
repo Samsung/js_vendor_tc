@@ -63,8 +63,6 @@ async function logItems() {
   assert(6 == counter++)
 }
 
-assert(logItems.__proto__+"" == "function AsyncFunction() { [native code] }")
-
 assert(0 == counter++)
 logItems();
 assert(2 == counter++)
