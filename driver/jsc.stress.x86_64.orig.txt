@@ -159,7 +159,7 @@
 [159] test/vendortest/driver/jsc.stress.base.js test/vendortest/JavaScriptCore/stress/float32-array-nan.js .... Success
 [160] test/vendortest/driver/jsc.stress.base.js test/vendortest/JavaScriptCore/stress/float32-array-out-of-bounds.js .... Success
 [161] test/vendortest/driver/jsc.stress.base.js test/vendortest/JavaScriptCore/stress/float32-repeat-out-of-bounds.js .... Success
-[162] test/vendortest/driver/jsc.stress.base.js test/vendortest/JavaScriptCore/stress/float32array-out-of-bounds.js .... Success
+[162] test/vendortest/driver/jsc.stress.base.js test/vendortest/JavaScriptCore/stress/float32array-out-of-bounds.js  .... Excluded (Wrong TC)
 [163] test/vendortest/driver/jsc.stress.base.js test/vendortest/JavaScriptCore/stress/float64-array-nan-inlined.js .... Success
 [164] test/vendortest/driver/jsc.stress.base.js test/vendortest/JavaScriptCore/stress/float64-array-nan.js .... Success
 [165] test/vendortest/driver/jsc.stress.base.js test/vendortest/JavaScriptCore/stress/fold-based-on-int32-proof-mul-branch.js .... Success
@@ -566,7 +566,7 @@
 [566] test/vendortest/driver/jsc.stress.base.js test/vendortest/JavaScriptCore/stress/weird-setter-counter-syntactic.js .... Success
 [567] test/vendortest/driver/jsc.stress.base.js test/vendortest/JavaScriptCore/stress/weird-setter-counter.js .... Success
 total : 567
-succ : 434
+succ : 433
 fail : 0
-ignore : 133
+ignore : 134
 timeout : 0
