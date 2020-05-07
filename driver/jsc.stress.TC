@@ -159,7 +159,7 @@ float32-array-nan-inlined.js
 float32-array-nan.js
 float32-array-out-of-bounds.js
 float32-repeat-out-of-bounds.js
-float32array-out-of-bounds.js
+// float32array-out-of-bounds.js // Wrong TC
 float64-array-nan-inlined.js
 float64-array-nan.js
 fold-based-on-int32-proof-mul-branch.js
