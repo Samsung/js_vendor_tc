@@ -262,7 +262,7 @@ try {
   iterator.throw();
   assert(false);
 } catch (e) {
-  assert (e === undefined);
+  assert(e instanceof TypeError)
 }
 assert(iterator.next().done === true);
 
@@ -272,6 +272,6 @@ try {
   iterator.throw(5);
   assert(false);
 } catch (e) {
-  assert (e === 5);
+  assert(e instanceof TypeError)
 }
 assert(iterator.next().done === true);
