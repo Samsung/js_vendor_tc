@@ -18,3 +18,31 @@ function ff() {
     return a(1)();
 }
 assert(ff(1) == 2)
+
+// arguments object with typeof operation
+var args1 = () => { return typeof arguments; };
+assert(args1() == "undefined"); // undefined
+
+function args2() {
+    var a = () => { return typeof arguments; };
+    return a();
+}
+assert(args2() == "object"); // object
+
+function args3() {
+    var a = () => { return () => { return typeof arguments; }; };
+    return a()();
+}
+assert(args3() == "object"); // object
+
+function args4() {
+    var a = () => { eval(""); return typeof arguments; };
+    return a();
+}
+assert(args4() == "object"); // object
+
+function args5() {
+    var a = () => { eval(""); return () => { return typeof arguments; }; };
+    return a()();
+}
+assert(args5() == "object"); // object
