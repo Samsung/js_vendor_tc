@@ -117,7 +117,7 @@ function format_value(s) {
   }
 }
 
-function promise_rejects(test, expected, promise, description) {
+function promise_rejects_js(test, expected, promise, description) {
   return promise
       .then(() => assert_unreached('Should have rejected: ' + description))
       .catch(function(e) {
