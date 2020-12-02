@@ -121,7 +121,7 @@ function promise_rejects_js(test, expected, promise, description) {
   return promise
       .then(() => assert_unreached('Should have rejected: ' + description))
       .catch(function(e) {
-        assert_throws(expected, function() {
+        assert_throws_js(expected, function() {
           throw e;
         }, description);
       });
@@ -132,7 +132,11 @@ function assert_class_string(object, class_string, description) {
       {}.toString.call(object), '[object ' + class_string + ']', description);
 }
 
-function assert_throws(code, func, description) {
+function assert_own_property(object, property) {
+  assert_true(object.hasOwnProperty(property), "assert_own_property");
+}
+
+function assert_throws_js(code, func, description) {
   try {
     func();
   } catch (e) {
