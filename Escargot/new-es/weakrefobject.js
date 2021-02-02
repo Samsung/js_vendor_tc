@@ -13,16 +13,23 @@
  * limitations under the License.
  */
 
-var deref = false;
 var wr;
 
 function alloc()
 {
   for (var i = 0; i < 1000; i ++) {
-    target = {}
-    target = []
+    let target = {}
+    let target2 = []
+    let target3 = {}
+    let target4 = []
+    let target5 = {}
+    let target6 = []
+    let target7 = {}
+    let target8 = []
   }
 
+  gc()
+  gc()
   gc()
   gc()
   gc()
@@ -34,12 +41,17 @@ function test1() {
   var target = {};
   wr = new WeakRef(target);
   target = null;
-  alloc()
-  assert(wr.deref() === undefined)
 }
 
 test1();
+alloc();
+gc()
+gc()
+gc()
+gc()
+assert(wr.deref() === undefined)
 
+ 
 function test2() {
   var target = {};
   wr = new WeakRef(target);
