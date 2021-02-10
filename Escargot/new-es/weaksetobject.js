@@ -14,6 +14,7 @@
  */
 
 var wr;
+var ws;
 
 function alloc()
 {
@@ -36,10 +37,11 @@ function alloc()
   gc()
 }
 
-
 function test1() {
   var target = {};
-  wr = new WeakRef(target);
+  ws = new WeakSet();
+  ws.add(target)
+  wr = new WeakRef(target)
   target = null;
 }
 
@@ -49,29 +51,39 @@ gc()
 gc()
 gc()
 gc()
-assert(wr.deref() === undefined)
+print(wr.deref() === undefined)
 
- 
 function test2() {
   var target = {};
-  wr = new WeakRef(target);
+  ws = new WeakSet();
+  ws.add(target)
+  wr = new WeakRef(target)
+  target = null;
+  ws = null;
   wr = null;
-  alloc()
-  print("NOCRASH")
-  target = null
-  alloc()
 }
 
 test2();
+alloc();
+gc()
+gc()
+gc()
+gc()
+print("NOCRASH")
 
 function test3() {
-  var target = {};
-  wr = new WeakRef(target);
-  wr = null;
-  target = null
-  alloc()
-  print("NOCRASH")
+  this.target = {};
+  ws = new WeakSet();
+  ws.add(target)
+  wr = new WeakRef(ws)
+  ws = null;
 }
 
 test3();
-
+alloc();
+gc()
+gc()
+gc()
+gc()
+print(wr.deref() == undefined)
+this.target = null
