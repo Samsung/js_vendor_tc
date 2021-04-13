@@ -36,3 +36,26 @@ foo()
 
 assert(foo.ClassWithStaticField.asdf1 == 100)
 assert(foo.ClassWithStaticField.asdf2() == 100)
+
+class ClassWithSelfReferenceStaticField {
+  static field = new ClassWithSelfReferenceStaticField();
+  static fieldMethod = ()=>{ return this.field }
+}
+
+assert(ClassWithSelfReferenceStaticField.field instanceof ClassWithSelfReferenceStaticField);
+assert(ClassWithSelfReferenceStaticField.fieldMethod() instanceof ClassWithSelfReferenceStaticField);
+assert(ClassWithSelfReferenceStaticField.fieldMethod() == ClassWithSelfReferenceStaticField.field);
+
+function boo() {
+  class ClassWithSelfReferenceStaticField {
+    static field = new ClassWithSelfReferenceStaticField();
+    static fieldMethod = ()=>{ return this.field }
+  }
+
+  boo.ClassWithSelfReferenceStaticField = ClassWithSelfReferenceStaticField;
+
+  assert(ClassWithSelfReferenceStaticField.field instanceof ClassWithSelfReferenceStaticField);
+  assert(ClassWithSelfReferenceStaticField.fieldMethod() instanceof ClassWithSelfReferenceStaticField);
+  assert(ClassWithSelfReferenceStaticField.fieldMethod() == ClassWithSelfReferenceStaticField.field);
+}
+boo();
