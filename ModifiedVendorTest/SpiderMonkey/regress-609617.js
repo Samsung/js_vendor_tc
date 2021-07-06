@@ -53,7 +53,7 @@ for (var i = 0; i < lhs_prefix.length; i++) {
              * specialize for ++ and -- as the compiler's error reporting does. See
              * the next section's forked assertEq code.
              */
-            assertEq(e.message, "Invalid assignment left-hand side");
+            assertEq(e.message, "Invalid left-hand side in assignment");
         }
     }
 }
@@ -78,7 +78,7 @@ try {
     eval("delete (foo('x') = 42);");
     assertEq(0, -4);
 } catch (e) {
-    assertEq(e.message, "Invalid assignment left-hand side");
+    assertEq(e.message, "Invalid left-hand side in assignment");
 }
 assertEq(fooArg, 'x');
 
