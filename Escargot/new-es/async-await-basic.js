@@ -66,3 +66,10 @@ async function logItems() {
 assert(0 == counter++)
 logItems();
 assert(2 == counter++)
+
+
+var compileTest = async test => {
+    print("if there is no compile error, it's ok");
+}
+
+compileTest();
