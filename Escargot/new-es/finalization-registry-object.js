@@ -88,3 +88,44 @@ gc()
 gc()
 gc()
 print("NOCRASH")
+
+var callCount = 0;
+function test4() {
+  var target = {};
+  wr = new FinalizationRegistry((value)=> {
+    called = true;
+    callCount++;
+  });
+  for (var i = 0; i < 1000; i++) {
+    wr.register(target, "too many registers");
+  }
+}
+
+test4();
+alloc();
+gc()
+gc()
+gc()
+gc()
+assert(callCount == 1000)
+print("NOCRASH")
+
+function test5() {
+  var target = {};
+  wr = new FinalizationRegistry((value)=> {
+    called = true;
+    assertNotReached();
+  });
+  for (var i = 0; i < 1000; i++) {
+    wr.register(target, "too many registers", target);
+  }
+  wr.unregister(target);
+}
+
+test5();
+alloc();
+gc()
+gc()
+gc()
+gc()
+print("NOCRASH")
