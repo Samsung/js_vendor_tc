@@ -99,6 +99,7 @@ function test4() {
   for (var i = 0; i < 1000; i++) {
     wr.register(target, "too many registers");
   }
+  target = null;
 }
 
 test4();
@@ -120,6 +121,7 @@ function test5() {
     wr.register(target, "too many registers", target);
   }
   wr.unregister(target);
+  target = null;
 }
 
 test5();
