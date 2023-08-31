@@ -73,3 +73,14 @@ var compileTest = async test => {
 }
 
 compileTest();
+
+try {
+    eval("new AsyncIterableObject((async B => {\
+                                await Promise.all(O.map((async O => {\
+                                    for await (const U of O) B.emitOne(U)\
+                                })))\
+                            }))")
+} catch (e) {
+    assert(e instanceof ReferenceError)
+}
+
