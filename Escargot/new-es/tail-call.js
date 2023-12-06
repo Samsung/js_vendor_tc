@@ -27,14 +27,26 @@ function nestedTailCall(n) {
   return nestedTailCall(n - 2);
 }
 
+var glob_n = 100;
+function tailCallWithNoParam() {
+  if (glob_n == 0) {
+    glob_n = 100; // reset counter
+    return 0;
+  }
+  glob_n--;
+  return tailCallWithNoParam();
+}
+
 function func1(arg) {
   tailCall(arg);
+  tailCallWithNoParam();
   return arg;
 }
 
 function func2() {
   var local = 100;
   tailCall(local);
+  tailCallWithNoParam();
   return local;
 }
 
@@ -44,6 +56,7 @@ function func3() {
     const local = 1;
   }
   tailCall(local);
+  tailCallWithNoParam();
   return local;
 }
 
@@ -52,18 +65,21 @@ function func4() {
   {
     const local = 100;
     tailCall(local);
+    tailCallWithNoParam();
     return local;
   }
 }
 
 function func5(arg) {
   nestedTailCall(arg);
+  tailCallWithNoParam();
   return arg;
 }
 
 function func6() {
   var local = 100;
   nestedTailCall(local);
+  tailCallWithNoParam();
   return local;
 }
 
@@ -73,6 +89,7 @@ function func7() {
     const local = 1;
   }
   nestedTailCall(local);
+  tailCallWithNoParam();
   return local;
 }
 
@@ -81,9 +98,12 @@ function func8() {
   {
     const local = 100;
     nestedTailCall(local);
+    tailCallWithNoParam();
     return local;
   }
 }
+
+assert(glob_n == 100);
 
 assert(func1(100) === 100);
 assert(func2() === 100);
