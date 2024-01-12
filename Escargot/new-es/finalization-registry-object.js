@@ -14,6 +14,7 @@
  */
 
 var wr;
+var token;
 
 function alloc()
 {
@@ -28,12 +29,12 @@ function alloc()
     let target8 = []
   }
 
-  gc()
-  gc()
-  gc()
-  gc()
-  gc()
-  gc()
+  gc();
+  gc();
+  gc();
+  gc();
+  gc();
+  gc();
 }
 
 var called = false;
@@ -42,52 +43,52 @@ function test1() {
   wr = new FinalizationRegistry((value)=> {
       called = true;
   });
-  wr.register(target, "diediedie")
+  wr.register(target, "diediedie");
   target = null;
 }
 
 test1();
 alloc();
-gc()
-gc()
-gc()
-gc()
-assert(called)
+gc();
+gc();
+gc();
+gc();
+assert(called);
 
 function test2() {
   var target = {};
   wr = new FinalizationRegistry((value)=> {
       called = true;
   });
-  wr.register(target, "diediedie")
+  wr.register(target, "diediedie");
   wr = null;
   target = null;
 }
 
 test2();
 alloc();
-gc()
-gc()
-gc()
-gc()
-print("NOCRASH")
+gc();
+gc();
+gc();
+gc();
+print("NOCRASH");
 
 function test3() {
   var target = {};
   wr = new FinalizationRegistry((value)=> {
       called = true;
   });
-  wr.register(target, "diediedie")
+  wr.register(target, "diediedie");
   wr = null;
 }
 
 test3();
 alloc();
-gc()
-gc()
-gc()
-gc()
-print("NOCRASH")
+gc();
+gc();
+gc();
+gc();
+print("NOCRASH");
 
 var callCount = 0;
 function test4() {
@@ -104,12 +105,12 @@ function test4() {
 
 test4();
 alloc();
-gc()
-gc()
-gc()
-gc()
-assert(callCount == 1000)
-print("NOCRASH")
+gc();
+gc();
+gc();
+gc();
+assert(callCount == 1000);
+print("NOCRASH");
 
 function test5() {
   var target = {};
@@ -120,14 +121,159 @@ function test5() {
   for (var i = 0; i < 1000; i++) {
     wr.register(target, "too many registers", target);
   }
-  wr.unregister(target);
+  assert(wr.unregister(target));
   target = null;
 }
 
 test5();
 alloc();
-gc()
-gc()
-gc()
-gc()
-print("NOCRASH")
+gc();
+gc();
+gc();
+gc();
+print("NOCRASH");
+
+function test6() {
+  var target = {};
+  wr = new FinalizationRegistry((value)=> {
+    called = true;
+    assertNotReached();
+  });
+  for (var i = 0; i < 1000; i++) {
+    wr.register(target, "too many registers", target);
+  }
+  assert(wr.unregister(target));
+  target = null;
+  wr = null;
+}
+
+test6();
+alloc();
+gc();
+gc();
+gc();
+gc();
+print("NOCRASH");
+
+called = false;
+function test7() {
+  var target = {};
+  wr = new FinalizationRegistry((value)=> {
+    called = true;
+  });
+  for (var i = 0; i < 1000; i++) {
+    wr.register(target, "too many registers", target);
+  }
+  target = null;
+}
+
+test7();
+alloc();
+gc();
+gc();
+gc();
+gc();
+assert(called);
+print("NOCRASH");
+
+called = false;
+callCount = 0;
+function test8() {
+  var target = {};
+  token = {};
+  wr = new FinalizationRegistry((value)=> {
+    called = true;
+    callCount++;
+  });
+  for (var i = 0; i < 1000; i++) {
+    wr.register(target, "too many registers", token);
+  }
+  target = null;
+}
+
+test8();
+alloc();
+gc();
+gc();
+gc();
+gc();
+assert(called);
+assert(callCount == 1000);
+assert(!wr.unregister(token));
+print("NOCRASH");
+
+called = false;
+callCount = 0;
+function test9() {
+  var target = {};
+  token = {};
+  wr = new FinalizationRegistry((value)=> {
+    called = true;
+    callCount++;
+  });
+  for (var i = 0; i < 1000; i++) {
+    wr.register(target, "too many registers", token);
+  }
+  target = null;
+  token = null;
+}
+
+test9();
+alloc();
+gc();
+gc();
+gc();
+gc();
+assert(called);
+assert(callCount == 1000);
+print("NOCRASH");
+
+function test10() {
+  var target = {};
+  token = {};
+  wr = new FinalizationRegistry((value)=> {
+    called = true;
+    callCount++;
+  });
+  for (var i = 0; i < 1000; i++) {
+    wr.register(target, "too many registers", token);
+  }
+  wr = null;
+  target = null;
+  token = null;
+}
+
+test10();
+alloc();
+gc();
+gc();
+gc();
+gc();
+print("NOCRASH");
+
+called = false;
+callCount = 0;
+function test11() {
+  var target = {};
+  token = {};
+  wr = new FinalizationRegistry((value)=> {
+    called = true;
+    callCount++;
+    alloc(); // trigger GC in finalizer
+  });
+  for (var i = 0; i < 100; i++) {
+    wr.register(target, "too many registers", token);
+  }
+  target = null;
+}
+
+test11();
+alloc();
+gc();
+gc();
+gc();
+gc();
+assert(called);
+assert(callCount == 100);
+assert(!wr.unregister(token));
+print("NOCRASH");
