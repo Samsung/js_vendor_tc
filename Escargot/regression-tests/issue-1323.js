@@ -5,4 +5,4 @@ class n extends Int8Array {
         eval ( " super ( ) ; " ) ;
     }
 }
-r. constructor = n, r. map ( function ( ) { } ) ;
+assertThrows("r. constructor = n, r. map ( function ( ) { } ) ;", ReferenceError);
