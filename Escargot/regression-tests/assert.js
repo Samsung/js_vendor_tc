@@ -18,3 +18,23 @@ function assert(expression) {
     throw new Error("Assertion failed");
   }
 }
+
+function assertThrows(code, errorType) {
+    try {
+        if (typeof code === 'function') {
+            code();
+        } else {
+            eval(code);
+        }
+    } catch (e) {
+        if (errorType && !(e instanceof errorType)) {
+            throw new Error("Expected exception has failed");
+        }
+        return;
+    }
+    throw new Error("Did not throw exception");
+}
+
+function assertNotReached(message) {
+    throw new Error("message");
+}
