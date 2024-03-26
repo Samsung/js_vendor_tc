@@ -104,7 +104,7 @@ try {
 try {
     if (tctc28 <= 1e3 && typeof arr.length != "undefined") {
         class b {
-            [await 1]() {}
+            [1]() {}
         }
         tctc28++
     }
