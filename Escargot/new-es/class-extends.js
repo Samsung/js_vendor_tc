@@ -39,3 +39,49 @@ function test() {
 
 var cons = test();
 new cons();
+
+function anonymous () {
+    function func() {
+        return 0;
+    }
+
+    function Infinity() {
+        return -1;
+    }
+
+    class Foo {
+        constructor(name) {
+            this.name = name;
+        }
+
+        func() {
+            return 1;
+        }
+
+        Infinity() {
+            return -2;
+        }
+    }
+
+    class FooBar extends Foo {
+        constructor(name, index) {
+            super(name);
+            this.index = index;
+        }
+
+        func() {
+            return super.func();
+        }
+
+        Infinity() {
+            return super.Infinity();
+        }
+    }
+
+    const tt = new FooBar('t', 1);
+    // same function name in the upper scope
+    tt.func();
+    tt.Infinity();
+}
+
+anonymous();
