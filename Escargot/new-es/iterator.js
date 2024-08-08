@@ -7,8 +7,7 @@ var iteratorPrototype = arrayIteratorPrototype.__proto__;
 
 assert(Object.prototype === Object.getPrototypeOf(iteratorPrototype));
 assert(Object.isExtensible(iteratorPrototype));
-assert(0 === Object.getOwnPropertyNames(iteratorPrototype).length);
-assert(1 === Object.getOwnPropertySymbols(iteratorPrototype).length);
+assert(2 === Object.getOwnPropertySymbols(iteratorPrototype).length);
 assert(Symbol.iterator ===
              Object.getOwnPropertySymbols(iteratorPrototype)[0]);
 
