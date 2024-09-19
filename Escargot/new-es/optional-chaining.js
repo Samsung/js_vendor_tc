@@ -51,3 +51,26 @@ assertThrows("func().a?.b?.().c?.d().e()", TypeError);
 assertThrows("func().a?.b?.().c.d().e()", TypeError);
 assertThrows("func().a?.b().c.d().e()", TypeError);
 assertThrows("func().a.b().c.d().e()", TypeError);
+
+function func2() {
+  let obj = {
+    delete: {
+      new() { return this._b; },
+     _b: { c: { return: function() { return 1; }} }
+    }
+  };
+  return obj;
+}
+
+assert(func2().delete?.new?.().c?.return?.() === 1);
+assert(func2().delete?.new?.().c?.return() === 1);
+assert(func2().delete?.new?.().c.return() === 1);
+assert(func2().delete?.new().c.return() === 1);
+assert(func2().delete.new().c.return() === 1);
+
+assert(func2().delete?.new?.().c?.return?.().e === undefined);
+assertThrows("func2().delete?.new?.().c?.return?.().e()", TypeError);
+assertThrows("func2().delete?.new?.().c?.return().e()", TypeError);
+assertThrows("func2().delete?.new?.().c.return().e()", TypeError);
+assertThrows("func2().delete?.new().c.return().e()", TypeError);
+assertThrows("func2().delete.new().c.return().e()", TypeError);
