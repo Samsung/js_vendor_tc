@@ -16,6 +16,10 @@
    * CACHED PRIMORDIAL FUNCTIONALITY (before a test might overwrite it) *
    **********************************************************************/
 
+  // escargot added
+  global.InternalError = global.Error
+  //
+
   var undefined; // sigh
 
   var Error = global.Error;
