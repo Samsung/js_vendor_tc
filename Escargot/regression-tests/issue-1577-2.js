@@ -17,45 +17,60 @@
 // another statement, used to abort with Assertion `isDisposableResourceRecord()'
 // failed / SEGV because the case body clobbered the disposable-record register.
 
-// minimal repro: a statement before `using` must not be clobbered
+// A using declaration directly inside a case without a block must throw a SyntaxError.
+assertThrows(`
 var o = {};
 switch (1) {
     case 1:
         o.k = 1;
+        using v = null;
+        break;
+}
+`, SyntaxError);
+
+// minimal repro: a statement before `using` must not be clobbered
+var o = {};
+switch (1) {
+    case 1: {
+        o.k = 1;
         using v = null; // null/undefined disposables are allowed and skipped
         break;
+    }
 }
 assert(o.k === 1);
 
 // Symbol.dispose runs at the end of the case block
 var log = [];
 switch (1) {
-    case 1:
+    case 1: {
         log.push("a");
         using d = { [Symbol.dispose]() { log.push("disposed"); } };
         log.push("b");
         break;
+    }
 }
 assert(log.join(",") === "a,b,disposed");
 
 // multiple using declarations are disposed in reverse order
 var order = [];
 switch (1) {
-    case 1:
+    case 1: {
         using a = { [Symbol.dispose]() { order.push("A"); } };
         using b = { [Symbol.dispose]() { order.push("B"); } };
         break;
+    }
 }
 assert(order.join(",") === "B,A");
 
 // a value stored before `using` is still readable afterwards
 var obj = {};
 switch (2) {
-    case 2:
+    case 2: {
         obj.x = 99;
         using w = null;
         assert(obj.x === 99);
         break;
+    }
 }
 
 // original reported shape: `using` a non-disposable (a class) must throw a
@@ -65,11 +80,12 @@ assertThrows(function () {
         const v0 = new Array(0x4141).fill(1.1);
         const v2 = {};
         switch (-1n) {
-            case -1n:
+            case -1n: {
                 v2[this] = v0;
                 class C7 extends ArrayBuffer {}
                 using v8 = C7;
                 break;
+            }
         }
     }, []);
 }, TypeError);
