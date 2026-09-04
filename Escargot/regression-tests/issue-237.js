@@ -17,4 +17,9 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-Intl.NumberFormat('en-u-foo-U-foo')
+// Unicode extension singletons are ASCII case-insensitive. The second "U"
+// therefore duplicates the first "u" singleton, making the tag structurally
+// invalid under ECMA-402 IsStructurallyValidLanguageTag.
+assertThrows(function() {
+    Intl.NumberFormat('en-u-foo-U-foo');
+}, RangeError);
