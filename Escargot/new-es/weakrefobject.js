@@ -37,14 +37,18 @@ function alloc()
 }
 
 
-function test1() {
-  var target = {};
-  wr = new WeakRef(target);
-  target = null;
+function runTest1() {
+  function makeWeakRef() {
+    var target = {};
+    wr = new WeakRef(target);
+    target = null;
+  }
+  makeWeakRef();
+  alloc();
 }
 
-test1();
-alloc();
+runTest1();
+
 gc()
 gc()
 gc()
