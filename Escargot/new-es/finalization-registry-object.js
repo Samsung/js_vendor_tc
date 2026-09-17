@@ -156,7 +156,12 @@ gc();
 print("NOCRASH");
 
 called = false;
-function test7() {
+function test7(depth) {
+  if (depth) {
+    test7(depth - 1);
+    return;
+  }
+
   var target = {};
   wr = new FinalizationRegistry((value)=> {
     called = true;
@@ -167,7 +172,7 @@ function test7() {
   target = null;
 }
 
-test7();
+test7(10);
 alloc();
 gc();
 gc();
