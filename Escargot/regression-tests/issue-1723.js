@@ -14,13 +14,17 @@
  */
 
 // https://github.com/Samsung/escargot/issues/1723
-// Prototype traversal must complete or throw a JS RangeError, never overflow C++.
-var deep173 = {};
+// Ordinary prototype traversal must complete without consuming native frames.
+var root173 = { inherited173: 17 };
+var deep173 = root173;
 for (var i = 0; i < 100000; ++i) deep173 = Object.create(deep173);
-function checked173(operation) {
-    try { operation(); } catch (error) { assert(error instanceof RangeError); }
-}
-checked173(function () { deep173.x = 1; assert(deep173.x === 1); });
-checked173(function () { assert(!("missing173" in deep173)); });
-checked173(function () { assert(Reflect.set(deep173, "y", 2)); assert(deep173.y === 2); });
-checked173(function () { deep173[5] = 3; assert(deep173[5] === 3); });
+deep173.x = 1;
+assert(deep173.x === 1);
+assert(!("missing173" in deep173));
+assert("inherited173" in deep173);
+assert(Reflect.set(deep173, "y", 2));
+assert(deep173.y === 2);
+deep173[5] = 3;
+assert(deep173[5] === 3);
+assert(Reflect.set(deep173, "inherited173", 42));
+assert(root173.inherited173 === 17 && deep173.inherited173 === 42);
