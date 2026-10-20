@@ -47,10 +47,23 @@ function test1() {
   target = null;
 }
 
-// Keep eval's transient roots out of the long-lived top-level interpreter frame.
-// Both the target-creation frame and its eval caller must retire before GC.
+// Run target creation in a separate job so its interpreter and native frames
+// have both returned before the top-level script checks finalization.
 function runTest(source) {
-  eval(source);
+  var completed = false;
+  var failure;
+  Promise.resolve().then(function() {
+    try {
+      eval(source);
+      completed = true;
+    } catch (error) {
+      failure = error;
+    }
+  });
+  assert(drainJobQueue());
+  if (!completed) {
+    throw failure;
+  }
 }
 
 runTest("test1();");
