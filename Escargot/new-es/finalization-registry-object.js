@@ -47,7 +47,10 @@ function test1() {
   target = null;
 }
 
-test1();
+// Retire the interpreter frame that creates each target before collecting.
+// Otherwise conservative stack scanning (especially under ASAN) can retain
+// temporary target pointers in the still-running test script's native frame.
+eval("test1();");
 alloc();
 gc();
 gc();
@@ -65,7 +68,7 @@ function test2() {
   target = null;
 }
 
-test2();
+eval("test2();");
 alloc();
 gc();
 gc();
@@ -82,7 +85,7 @@ function test3() {
   wr = null;
 }
 
-test3();
+eval("test3();");
 alloc();
 gc();
 gc();
@@ -103,7 +106,7 @@ function test4() {
   target = null;
 }
 
-test4();
+eval("test4();");
 alloc();
 gc();
 gc();
@@ -125,7 +128,7 @@ function test5() {
   target = null;
 }
 
-test5();
+eval("test5();");
 alloc();
 gc();
 gc();
@@ -147,7 +150,7 @@ function test6() {
   wr = null;
 }
 
-test6();
+eval("test6();");
 alloc();
 gc();
 gc();
@@ -172,7 +175,7 @@ function test7(depth) {
   target = null;
 }
 
-test7(10);
+eval("test7(10);");
 alloc();
 gc();
 gc();
@@ -196,7 +199,7 @@ function test8() {
   target = null;
 }
 
-test8();
+eval("test8();");
 alloc();
 gc();
 gc();
@@ -223,7 +226,7 @@ function test9() {
   token = null;
 }
 
-test9();
+eval("test9();");
 alloc();
 gc();
 gc();
@@ -248,7 +251,7 @@ function test10() {
   token = null;
 }
 
-test10();
+eval("test10();");
 alloc();
 gc();
 gc();
@@ -272,7 +275,7 @@ function test11() {
   target = null;
 }
 
-test11();
+eval("test11();");
 alloc();
 gc();
 gc();
