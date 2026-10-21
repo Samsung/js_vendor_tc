@@ -26,18 +26,26 @@
     var revoked = Proxy.revocable({}, {});
     revoked.revoke();
 
-    var proxy = {};
+    var deepTarget = { x: 1 };
+    var proxy = deepTarget;
     for (var i = 0; i < 100000; ++i) proxy = new Proxy(proxy, {});
     var operations = [
-        p => Object.getOwnPropertyDescriptor(p, "x"),
-        p => Reflect.defineProperty(p, "x", { value: 1 }),
-        p => Reflect.deleteProperty(p, "x"),
-        p => Reflect.preventExtensions(p)
+        p => Object.getOwnPropertyDescriptor(p, "x").value === 1,
+        p => Reflect.defineProperty(p, "x", { value: 2 }) && deepTarget.x === 2,
+        p => Reflect.deleteProperty(p, "x") && !Object.prototype.hasOwnProperty.call(deepTarget, "x"),
+        p => Reflect.preventExtensions(p) && !Object.isExtensible(deepTarget),
+        // A get trap also queries the target descriptor to validate its result.
+        p => new Proxy(p, { get() { return 1; } }).x === 1
     ];
+    // Native frame sizes and stack budgets vary. A chain that fits on the
+    // stack must complete with the expected result rather than throw.
     for (var operation of operations) {
         assertThrows(() => operation(revoked.proxy), TypeError);
-        assertThrows(() => operation(proxy), RangeError);
+        var result;
+        try { result = operation(proxy); } catch (error) {
+            if (error instanceof RangeError) continue;
+            throw error;
+        }
+        assert(result);
     }
-    // A get trap also queries the target descriptor to validate its result.
-    assertThrows(() => new Proxy(proxy, { get() { return 1; } }).x, RangeError);
 })();
