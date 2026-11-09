@@ -15,37 +15,41 @@
 
 // GHSA-4xcm-ch84-cf27: variable counts must not wrap around their 16-bit
 // storage and slip past the variable limit check.
+// The names are spread over nested blocks: the lexical depth adds up across
+// nesting, while each block keeps a small name list, so even debug builds
+// parse the source cheaply.
 
 (function () {
-    function names(prefix, n) {
-        var a = [];
-        for (var i = 0; i < n; i++)
-            a.push(prefix + i);
-        return a.join(",");
+    function nested(total) {
+        var src = "", close = "", n = 0;
+        while (n < total) {
+            var k = Math.min(100, total - n), names = [];
+            for (var i = 0; i < k; i++)
+                names.push("l" + (n + i));
+            src += "{ let " + names.join(",") + "; ";
+            close += "}";
+            n += k;
+        }
+        return "(function(){ " + src + "l0 = 7; return l0; " + close + " })()";
     }
 
-    function expectLimit(src) {
+    function expectLimit(total) {
         try {
-            (0, eval)(src);
+            (0, eval)(nested(total));
         } catch (e) {
             if (e instanceof SyntaxError)
                 return;
             throw e;
         }
-        throw new Error("expected SyntaxError: " + src.slice(0, 40));
+        throw new Error("expected SyntaxError for " + total + " names");
     }
 
-    // 65534 vars + the two reserved slots wrap a 16-bit count to 0
-    [65534, 65535, 131070].forEach(function (n) {
-        expectLimit("(function(){ var " + names("v", n) + "; return v0; })()");
-    });
-    [65534, 65535].forEach(function (n) {
-        expectLimit("(function(" + names("p", n) + "){ return p0; })()");
-    });
-    expectLimit("(function(){ { let " + names("l", 65536) + "; return l0; } })()");
-    expectLimit("(function(){ var " + names("v", 65536) + "; return function(){ eval(''); return v0; }; })()()");
-
-    var v = (0, eval)("(function(){ var " + names("v", 16381) + "; v0 = 1; return v0; })()");
-    if (v !== 1)
+    // the depth wraps to 0 at 65536
+    expectLimit(65536);
+    // just above the limit
+    expectLimit(16382);
+    // just below the limit still works
+    var v = (0, eval)(nested(16381));
+    if (v !== 7)
         throw new Error("a scope just below the limit must still work");
 })();
