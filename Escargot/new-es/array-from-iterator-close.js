@@ -67,7 +67,7 @@ test(MyArray, {
             }
         });
     },
-    exceptionVal: "return getter throws",
+    exceptionVal: "defineProperty throws",
     closed: true,
 });
 
