@@ -92,7 +92,8 @@ for (var constructor of typedArrayConstructors) {
     Number.prototype.toLocaleString = pushArgs("Number");
 
     (new constructor([1, 2])).toLocaleString();
-    assertEquals(["Number", [], "Number", []], log);
+    assertEquals(["Number", [undefined, undefined],
+                  "Number", [undefined, undefined]], log);
 
     Number.prototype.toLocaleString = NumberToLocaleString;
   })();
